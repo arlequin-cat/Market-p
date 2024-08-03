@@ -26,12 +26,12 @@ public class Producto {
     @Column(name = "cantidad_stock")
     private Integer cantidadStock;
 
-    private boolean estado;
+    private Boolean estado;
 
     //representa las relaciones entre las tablas (analizar la logica del negocio)
      @ManyToOne
      @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
-    private Categoria categoria;
+     private Categoria categoria;
 
     //Getters y setters
     public Integer getIdProducto() {
@@ -88,5 +88,13 @@ public class Producto {
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }
